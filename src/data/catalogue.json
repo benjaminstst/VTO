@@ -456,5 +456,53 @@
     "bodyArea": "top",
     "gender": "unisex",
     "sizeRange": "XS–3XL"
+  },
+  {
+    "id": "voicer-stsu256",
+    "styleCode": "STSU256",
+    "name": "Voicer",
+    "category": "hoodies",
+    "fit": "Boxy",
+    "fabricWeight": "400 GSM",
+    "material": "50% recycled ring-spun carded cotton, 50% organic ring-spun carded cotton",
+    "certifications": ["GRS", "OCS"],
+    "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C138.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C138.jpg",
+    "colors": [
+      { "name": "Black", "hex": "#2A2B2D", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C002.jpg" },
+      { "name": "French Navy", "hex": "#282D3C", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C727.jpg" },
+      { "name": "Natural Raw", "hex": "#EFE8DA", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C054.jpg" },
+      { "name": "Faded Olive", "hex": "#A49667", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C153.jpg" },
+      { "name": "Misty Grey", "hex": "#9FA39F", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STSU256_C138.jpg" }
+    ],
+    "description": "boxy pullover hoodie with a double-layered hood, set-in sleeves, and brushed fleece interior",
+    "bodyArea": "top",
+    "gender": "unisex",
+    "sizeRange": "XXS–3XL"
+  },
+  {
+    "id": "hypster-sttu258",
+    "styleCode": "STTU258",
+    "name": "Hypster",
+    "category": "tshirts",
+    "fit": "Boxy",
+    "fabricWeight": "200 GSM",
+    "material": "50% recycled ring-spun carded cotton, 50% organic ring-spun carded cotton",
+    "certifications": ["GRS", "OCS"],
+    "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C152.jpg",
+    "thumbnailUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C152.jpg",
+    "colors": [
+      { "name": "Black", "hex": "#2A2B2D", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C002.jpg" },
+      { "name": "White", "hex": "#F4F9FF", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C001.jpg" },
+      { "name": "French Navy", "hex": "#282D3C", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C727.jpg" },
+      { "name": "Natural Raw", "hex": "#EFE8DA", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C054.jpg" },
+      { "name": "Faded Olive", "hex": "#A49667", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C153.jpg" },
+      { "name": "Grounded Beige", "hex": "#AF895A", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C152.jpg" },
+      { "name": "Misty Grey", "hex": "#9FA39F", "garmentImageUrl": "https://res.cloudinary.com/www-stanleystella-com/image/upload/c_lpad,w_2400,f_auto,q_auto/v1/TechnicalNames/PFM0_STTU258_C138.jpg" }
+    ],
+    "description": "boxy crew neck t-shirt with set-in sleeves, forwarded shoulder seam, and a relaxed oversized fit",
+    "bodyArea": "top",
+    "gender": "unisex",
+    "sizeRange": "XXS–3XL"
   }
 ]

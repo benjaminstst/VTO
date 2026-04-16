@@ -5,6 +5,9 @@ import { SegmentControl } from "@/components/ui/SegmentControl";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { ProductGrid } from "./ProductGrid";
 import { ColorPicker } from "./ColorPicker";
+import { PromptEditor } from "./PromptEditor";
+import { SessionControls } from "./SessionControls";
+import { ApiKeyInput } from "./ApiKeyInput";
 import { useTryOnStore } from "@/stores/tryonStore";
 import {
   getProductsByCategory,
@@ -19,7 +22,13 @@ const categorySegments = getCategories().map((cat) => ({
   label: getCategoryLabel(cat),
 }));
 
-export function Sidebar() {
+interface SidebarProps {
+  onStart: () => void;
+  onStop: () => void;
+  onDevApiKey: (key: string) => void;
+}
+
+export function Sidebar({ onStart, onStop, onDevApiKey }: SidebarProps) {
   const {
     selectedProduct,
     selectedColor,
@@ -50,6 +59,12 @@ export function Sidebar() {
         </p>
       </div>
 
+      {/* Dev mode API key input */}
+      <ApiKeyInput onApiKeySet={onDevApiKey} />
+
+      {/* Session controls */}
+      <SessionControls onStart={onStart} onStop={onStop} />
+
       {/* Search */}
       <SearchInput value={searchQuery} onChange={setSearchQuery} />
 
@@ -77,6 +92,9 @@ export function Sidebar() {
           onSelectColor={selectColor}
         />
       )}
+
+      {/* Prompt editor (shown when a product is selected) */}
+      <PromptEditor />
     </aside>
   );
 }

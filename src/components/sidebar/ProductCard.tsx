@@ -1,6 +1,7 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { useState } from "react";
+import { Check, Shirt } from "lucide-react";
 import Image from "next/image";
 import type { Product } from "@/types/product";
 
@@ -15,6 +16,12 @@ export function ProductCard({
   isSelected,
   onSelect,
 }: ProductCardProps) {
+  const [imgError, setImgError] = useState(false);
+  const hasImage =
+    product.thumbnailUrl &&
+    !product.thumbnailUrl.startsWith("/images/products/") &&
+    !imgError;
+
   return (
     <button
       type="button"
@@ -28,13 +35,20 @@ export function ProductCard({
     >
       {/* Thumbnail */}
       <div className="relative aspect-square w-full overflow-hidden bg-gray-50">
-        <Image
-          src={product.thumbnailUrl}
-          alt={product.name}
-          fill
-          sizes="(max-width: 768px) 50vw, 150px"
-          className="object-contain p-2"
-        />
+        {hasImage ? (
+          <Image
+            src={product.thumbnailUrl}
+            alt={product.name}
+            fill
+            sizes="(max-width: 768px) 50vw, 150px"
+            className="object-contain p-2"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <Shirt className="h-10 w-10 text-brand-gray/40" strokeWidth={1.5} />
+          </div>
+        )}
         {isSelected && (
           <div className="absolute right-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-green">
             <Check className="h-3 w-3 text-white" strokeWidth={3} />
