@@ -1,26 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
-import { SegmentControl } from "@/components/ui/SegmentControl";
-import { SearchInput } from "@/components/ui/SearchInput";
 import { ProductGrid } from "./ProductGrid";
 import { ColorPicker } from "./ColorPicker";
 import { PromptEditor } from "./PromptEditor";
 import { SessionControls } from "./SessionControls";
 import { ApiKeyInput } from "./ApiKeyInput";
 import { useTryOnStore } from "@/stores/tryonStore";
-import {
-  getProductsByCategory,
-  searchProducts,
-  getCategories,
-  getCategoryLabel,
-} from "@/lib/products";
-import type { ProductCategory } from "@/types/product";
-
-const categorySegments = getCategories().map((cat) => ({
-  value: cat,
-  label: getCategoryLabel(cat),
-}));
+import { getAllProducts } from "@/lib/products";
 
 interface SidebarProps {
   onStart: () => void;
@@ -28,24 +14,11 @@ interface SidebarProps {
   onDevApiKey: (key: string) => void;
 }
 
-export function Sidebar({ onStart, onStop, onDevApiKey }: SidebarProps) {
-  const {
-    selectedProduct,
-    selectedColor,
-    activeCategory,
-    searchQuery,
-    selectProduct,
-    selectColor,
-    setActiveCategory,
-    setSearchQuery,
-  } = useTryOnStore();
+const products = getAllProducts();
 
-  const filteredProducts = useMemo(() => {
-    if (searchQuery.trim()) {
-      return searchProducts(searchQuery);
-    }
-    return getProductsByCategory(activeCategory);
-  }, [activeCategory, searchQuery]);
+export function Sidebar({ onStart, onStop, onDevApiKey }: SidebarProps) {
+  const { selectedProduct, selectedColor, selectProduct, selectColor } =
+    useTryOnStore();
 
   return (
     <aside className="flex h-full w-full flex-col gap-4 overflow-y-auto bg-white p-4">
@@ -54,9 +27,7 @@ export function Sidebar({ onStart, onStop, onDevApiKey }: SidebarProps) {
         <h1 className="font-display text-lg font-semibold text-brand-charcoal">
           Virtual Try-On
         </h1>
-        <p className="text-xs text-brand-gray">
-          Select a garment to try on
-        </p>
+        <p className="text-xs text-brand-gray">Select a garment to try on</p>
       </div>
 
       {/* Dev mode API key input */}
@@ -65,21 +36,9 @@ export function Sidebar({ onStart, onStop, onDevApiKey }: SidebarProps) {
       {/* Session controls */}
       <SessionControls onStart={onStart} onStop={onStop} />
 
-      {/* Search */}
-      <SearchInput value={searchQuery} onChange={setSearchQuery} />
-
-      {/* Category tabs */}
-      {!searchQuery && (
-        <SegmentControl<ProductCategory>
-          segments={categorySegments}
-          value={activeCategory}
-          onChange={setActiveCategory}
-        />
-      )}
-
       {/* Product grid */}
       <ProductGrid
-        products={filteredProducts}
+        products={products}
         selectedProductId={selectedProduct?.id ?? null}
         onSelectProduct={selectProduct}
       />
