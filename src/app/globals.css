@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #f7f4ef;
+  --color-charcoal: #1c1c1a;
+  --color-warm-gray: #6b6860;
+  --color-green: #2d5a3d;
+  --color-green-light: #eaf2ec;
+  --color-error: #c0392b;
+}
+
+body {
+  color: var(--color-charcoal);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
